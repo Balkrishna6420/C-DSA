@@ -33,7 +33,7 @@ int main(){
 
 //Reversing using vector and two pointer concept
 
-#include<iostream>
+ #include<iostream>
 #include<vector>
 using namespace std;
 vector<int>reverse (vector<int>v){
