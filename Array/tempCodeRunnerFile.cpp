@@ -1,32 +1,27 @@
-// #include<iostream>
-// // #include<vector>
-// // using namespace std;
-// // vector<int>reverse (vector<int>v){
-// //     int start=0;
-// //     int end=v.size()-1;
-// //     while(start<=end){
-// //         swap(v[start],v[end]);
-// //         start++;
-// //         end--;
-// //     }
-// //     return v;
-// // }
-// // void print (vector<int>v){
-// //     for(int i=0;i<v.size();i++){
-// //         cout<<v[i]<<" "<<endl;
-// //     }
-// // }
-// // int main(){
-//     vector<int>v;
-//     v.push_back(7);
-//     v.push_back(9);
-//     v.push_back(11);
-//     v.push_back(12);
-//     v.push_back(17);
+#include<iostream> 
+using namespace std;
 
-//     vector<int>ans=reverse(v);
-//     print(ans);
-//     return 0;
+int getPivot(int arr[], int n) {
 
+    int s = 0;
+    int e = n-1;
+    int mid = s + (e-s)/2;
 
-// }
+    while(s<e) {
+
+        if(arr[mid] >= arr[0])
+        {
+            s = mid+1;
+        }
+        else{
+            e = mid;
+        }
+        mid = s + (e-s)/2;
+    }
+    return s;
+}
+
+int main() {
+    int arr[6] = {1, 3, 8, 10, 17,4};
+    cout << "Pivot is " << getPivot(arr, 6) << endl;
+}

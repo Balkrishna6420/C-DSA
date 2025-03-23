@@ -46,6 +46,8 @@ int main() {
     return 0;
 }
 
+
+
 int findPeak(int arr[], int n) {
 
     int s =0, e = n-1;
@@ -173,8 +175,8 @@ int getPivot(int arr[], int n) {
 }
 
 int main() {
-    int arr[5] = {1, 3, 8, 10, 17};
-    cout << "Pivot is " << getPivot(arr, 5) << endl;
+    int arr[6] = {1, 3, 8, 10, 17,4};
+    cout << "Pivot is " << getPivot(arr, 6) << endl;
 }
 
 //search rotated array
@@ -297,6 +299,81 @@ int main() {
 
     int tempSol = sqrtInteger(n);
     cout <<" Answer is " << morePrecision(n, 3, tempSol) << endl;
+
+    return 0;
+}
+
+//find Total number of occurences;
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+class Solution {
+public:
+    int countOccurrences(vector<int>& arr, int target) {
+        int first = findFirst(arr, target);
+        int last = findLast(arr, target);
+        
+        if (first == -1) return 0; // Target not found
+        
+        return last - first + 1;
+    }
+
+private:
+    int findFirst(vector<int>& arr, int target) {
+        int left = 0, right = arr.size() - 1;
+        int first = -1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] == target) {
+                first = mid;
+                right = mid - 1;  // Move left to find first occurrence
+            }
+            else if (arr[mid] < target) {
+                left = mid + 1;
+            }
+            else {
+                right = mid - 1;
+            }
+        }
+        return first;
+    }
+
+    int findLast(vector<int>& arr, int target) {
+        int left = 0, right = arr.size() - 1;
+        int last = -1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] == target) {
+                last = mid;
+                left = mid + 1;  // Move right to find last occurrence
+            }
+            else if (arr[mid] < target) {
+                left = mid + 1;
+            }
+            else {
+                right = mid - 1;
+            }
+        }
+        return last;
+    }
+};
+
+// Driver code
+int main() {
+    Solution sol;
+    vector<int> arr = {1, 1, 2, 2, 2, 2, 3};
+    int target = 2;
+    cout << sol.countOccurrences(arr, target) << endl; // Output: 4
+
+    vector<int> arr2 = {8, 9, 10, 12, 12, 12};
+    int target2 = 12;
+    cout << sol.countOccurrences(arr2, target2) << endl; // Output: 3
+
+    vector<int> arr3 = {1, 1, 2, 2, 2, 2, 3};
+    int target3 = 4;
+    cout << sol.countOccurrences(arr3, target3) << endl; // Output: 0
 
     return 0;
 }
