@@ -1,5 +1,6 @@
 //It ignores the xtraa characyers and lower and upper case alphabets
 #include <bits/stdc++.h>
+using namespace std;
 bool isvalid(char ch) {
 
     if(ch>='A' && ch<='Z' || ch>='a' && ch<='z' || ch>='0' && ch<='9') {
@@ -44,4 +45,18 @@ bool checkPalindrome(string s)
         }
     }
     return 1;
+}
+
+int main() {
+    string s;
+    cout << "Enter a string: ";
+    getline(cin, s);
+
+    if (checkPalindrome(s)) {
+        cout << "The given string is a palindrome." << endl;
+    } else {
+        cout << "The given string is not a palindrome." << endl;
+    }
+
+    return 0;
 }
