@@ -41,4 +41,4 @@ int main(){
     MergeArrays(arr1,5,arr2,3,arr3);
     printArrays(arr3,8);
     return 0;
-}
+};
