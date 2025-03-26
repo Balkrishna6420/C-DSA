@@ -31,4 +31,5 @@ int main(){
 
     cout<<"Maximum value in the array is"<<MaxValue(arr,size)<<endl;
     cout<<"Minimum value in the array is"<<MinValue(arr,size)<<endl;
+    return 0;
 }

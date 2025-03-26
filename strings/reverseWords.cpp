@@ -5,7 +5,7 @@ using namespace std;
 
 string reverseWord(string s)
 {
-    int s1 = 0, e = s.length() - 1, i = 0;
+    int s1 = 0, e = s.length() - 1;
     while (s1 <= e)
     {
         swap(s[s1++],s[e--]);
@@ -15,7 +15,7 @@ string reverseWord(string s)
 
 string reverseStr(string s)
 {
-    int i = 0, n = s.length();
+    int i = 0, n = s.length()-1;
     string temp="", finalStr = "";
     while (i <= n)
     {
@@ -56,5 +56,4 @@ int main()
     str = reverseStr(str);
     cout << str << endl;
     cout<< str.length();
-    return 0;
 }
