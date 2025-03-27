@@ -36,3 +36,6 @@ int main() {
 
     return 0;
 }
+//formula
+//gcd(a,b)=gcd(a-b,b)
+//gcd(a,b)=gcd(a%b,b)
