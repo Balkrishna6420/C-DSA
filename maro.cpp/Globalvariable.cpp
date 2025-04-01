@@ -11,12 +11,10 @@ void a(int& i) {
     char ch = 'a';
     cout << i << endl;
 }
-
 void b(int& i) {
     cout << score << " in b" << endl;
     cout << i << endl;
 }
-
 int main() {
     cout << score << " in main" << endl;
     int i = 5;

@@ -21,7 +21,5 @@ int main() {
     ans = getMax(a,b);
     cout << ans << endl;
 
-
-
     return 0;
 }
