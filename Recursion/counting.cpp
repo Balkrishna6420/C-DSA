@@ -5,10 +5,12 @@ int print(int n){
     if(n==0){
         return 1;
     }
+
+     //processing
+     cout<<n<<endl;
     //recursive relation
     print (n-1);
-    //processing
-    cout<<n<<endl;
+   
 
 }
 int main(){
