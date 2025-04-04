@@ -73,3 +73,5 @@ int main() {
 
     return 0;
 }
+//best and average tc=O(nlogn)
+//worst tc=(o(n^2))
